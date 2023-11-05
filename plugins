@@ -1,1 +1,5 @@
+Eclipse Temurin installerVersion 1.5
+Provides an installer for the JDK tool that downloads the JDK from https://adoptium.net
+
+
 
