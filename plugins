@@ -1,5 +1,12 @@
 Eclipse Temurin installerVersion 1.5
 Provides an installer for the JDK tool that downloads the JDK from https://adoptium.net
 
+Docker PipelineVersion
+Build and use Docker containers from pipelines.
 
 
+Docker
+This plugin integrates Jenkins with Docker
+
+docker-build-step
+This plugin allows to add various docker commands to your job as build steps.
