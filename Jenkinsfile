@@ -23,31 +23,6 @@ pipeline {
             steps {
                     sh "mvn test"
             }
-        }        
-        
-        stage('Maven Build') {
-            steps {
-                    sh "mvn clean compile"
-            }
-        }
-        
-        stage('Docker Build & Push') {
-            steps {
-                   script {
-                       withDockerRegistry(credentialsId: 'b289dc43-2ede-4bd0-95e8-75ca26100d8d', toolName: 'docker') {
-                            sh "docker build -t webapp ."
-                            sh "docker tag webapp adijaiswal/webapp:latest"
-                            sh "docker push adijaiswal/webapp:latest "
-                        }
-                   } 
-            }
-        }
-        
-        stage('Docker Image scan') {
-            steps {
-                    sh "trivy image adijaiswal/webapp:latest "
-            }
-        }
-        
+        }      
     }
 }
