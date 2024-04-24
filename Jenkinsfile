@@ -27,6 +27,7 @@ pipeline {
             steps {
                     sh "mvn test"
             }
-        }      
+        }  
+      // jar file /var/lib/jenkins/workspace/Springboot
     }
 }
