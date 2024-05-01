@@ -27,7 +27,23 @@ pipeline {
             steps {
                     sh "mvn test"
             }
-        }  
+        } 
+        
+        stage('Sonar Analysis') {
+            steps {
+               withSonarQubeEnv('sonar-server'){
+                   sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Springboot \
+                   -Dsonar.java.binaries=. \
+                   -Dsonar.projectKey=Springboot '''
+               }
+            }
+        }
       // jar file /var/lib/jenkins/workspace/Springboot
+      
+      stage('Package') {
+            steps {
+                    sh "mvn package"
+            }
+        }
     }
 }
