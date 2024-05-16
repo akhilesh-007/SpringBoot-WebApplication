@@ -9,7 +9,7 @@ pipeline {
         SCANNER_HOME= tool 'sonar-scanner'
     }
    
-           
+       stages {    
         stage('Code Compile') {
             steps {
                     sh "mvn compile"
@@ -51,4 +51,5 @@ pipeline {
         }
 
     }
+}
 
