@@ -37,18 +37,6 @@ pipeline {
                     sh "mvn package"
             }
         }
-        stage("Docker Build & Push"){
-            steps{
-                script{
-                   withDockerRegistry(credentialsId: 'fe107e6f-4a87-4d7e-92af-b8a89cf17c29', toolName: 'docker') {
-                        
-                        sh "docker build -t image1 ."
-                        sh "docker tag image1 akhil146/spring123:latest "
-                        sh "docker push akhil146/spring123:latest "
-                    }
-                }
-            }
-        }
 
     }
 }
