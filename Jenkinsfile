@@ -9,7 +9,12 @@ pipeline {
         SCANNER_HOME= tool 'sonar-scanner'
     }
    
-       stages {    
+       stages {
+        stage('Git Checkout ') {
+            steps {
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/akhilesh-007/SpringBoot-WebApplication.git'
+            }
+        }   
         stage('Code Compile') {
             steps {
                     sh "mvn compile"
