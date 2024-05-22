@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Sonar Analysis') {
             steps {
-               withSonarQubeEnv('son-token'){
+               withSonarQubeEnv('sonar-server'){
                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Springboot \
                    -Dsonar.java.binaries=. \
                    -Dsonar.projectKey=Springboot '''
